@@ -17,7 +17,7 @@ public class ConexaoDao {
 	private String password = "mysql@123";
 	
 	// Método de conexão
-	public Connection connection () throws SQLException, ClassNotFoundException {
+	public Connection connection() throws SQLException, ClassNotFoundException {
 		Connection connection = null;
 		
 		try {
