@@ -19,7 +19,6 @@ public class ConexaoDao {
 	// Método de conexão
 	public Connection connection() throws SQLException, ClassNotFoundException {
 		Connection connection = null;
-		
 		try {
 			Class.forName(driver);
 			connection = DriverManager.getConnection(url, username, password);
