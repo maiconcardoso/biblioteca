@@ -18,32 +18,27 @@
 	crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta charset="UTF-8">
-<%
-	LivroDao livroDao = new LivroDao();
-	List<LivroDto> lista = livroDao.readAll();
-%>
-<title>Lista de Livros</title>
+<title>Excluir Livro</title>
 </head>
 <body>
-	<table class="table">
-		<thead>
-			<tr>
-				<th scope="col">Código</th>
-				<th scope="col">Nome</th>
-				<th scope="col">Ações</th>
-			</tr>
-		</thead>
-		<tbody>
-			<%for (int i = 0; i < lista.size(); i++) { %>
-			<tr>
-				<th scope="row"> <%=lista.get(i).getId() %> </th>
-				<td> <%=lista.get(i).getName() %> </td>
-				<td><a type="button" class="btn btn-warning" href="<%= 
-					"formularioExcluirLivro.jsp?id="+ lista.get(i).getId()+"&name="+lista.get(i).getName()
-				%>">Excluir</a></td>
-			</tr>
-			<% } %>
-		</tbody>
-	</table>
+	<form action="excluirLivro.jsp" method="POST">
+		<div class="mb-3">
+			<label for="formGroupExampleInput" class="form-label"></label> <input
+				type="text" class="form-control"
+				value=" <%=request.getParameter("id")%> "
+				id="formGroupExampleInput">
+		</div>
+		<div class="mb-3">
+			<label for="formGroupExampleInput2" class="form-label"></label> <input
+				type="text" class="form-control"
+				value=" <%=request.getParameter("name")%> "
+				id="formGroupExampleInput2">
+		</div>
+
+		<div class="mb-3">
+			<button type="submit" class="btn btn-danger">Excluir</button>
+		</div>
+
+	</form>
 </body>
 </html>
